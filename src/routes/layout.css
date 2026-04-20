@@ -1,0 +1,36 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+@plugin "daisyui";
+
+
+html {
+    @apply
+    bg-amber-100
+}
+
+@utility row{
+    @apply
+    flex
+    flex-row
+    space-x-2
+    justify-center
+    items-center
+}
+
+@utility active-nav-bar{
+    @apply
+    bg-white/25
+    h-12 w-full
+    row
+    rounded-4xl
+}
+
+@utility unactive-nav-bar{
+    @apply
+    active:bg-white/25
+    transition
+    h-12 w-full
+    row
+    rounded-4xl
+}
