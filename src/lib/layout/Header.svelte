@@ -1,9 +1,8 @@
 <script>
-    // من الأفضل تفكيك الخصائص (Destructuring) لسهولة الاستخدام
     let { title } = $props(); 
     
     import Icon from "@iconify/svelte";
-    import { page } from '$app/stores'; // استدعاء مخزن الصفحة من SvelteKit
+    import { page } from '$app/stores';
 </script>
 
 <div 
@@ -14,15 +13,14 @@
         {title}
     </div>
     
-    {#if $page.url.pathname !== '/'}
-        <button 
-            class="active:bg-white/25 transition h-12 w-12 flex items-center justify-center rounded-full"
-            onclick={() => history.back()}
-        >
-            <Icon 
-                icon="material-symbols:line-start-arrow" 
-                class="text-4xl" 
-            />
-        </button>
-    {/if}
+    <button
+        hidden={$page.url.pathname === '/'}
+        class="active:bg-white/25 transition h-12 w-12 flex items-center justify-center rounded-full"
+        onclick={() => history.back()}
+    >
+        <Icon 
+            icon="material-symbols:line-start-arrow" 
+            class="text-4xl" 
+        />
+    </button>
 </div>

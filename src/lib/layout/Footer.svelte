@@ -19,7 +19,7 @@
 >
     {#each navItems as item (item.path)}
         <button 
-            class="nav-btn {props.title === item.title ? 'active-nav-bar' : 'unactive-nav-bar'}"
+            class="nav-btn mx-1 {props.title === item.title ? 'active-nav-bar' : 'unactive-nav-bar'}"
             onclick={() => {
                 if (props.title !== item.title) {
                     goto(resolve(item.path));

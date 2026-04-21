@@ -14,6 +14,7 @@
         try {
             const res = await fetch(`${API}/news`)
             list = await res.json() 
+            loading = false
         } catch (error) {
             console.error("فشل في جلب البيانات:", error)
         }
